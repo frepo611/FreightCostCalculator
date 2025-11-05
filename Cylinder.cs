@@ -7,5 +7,5 @@ internal class Tube(Centimeter radius, Centimeter height, Kilogram weight)
     public Centimeter Height { get; init; } = height;
 
     
-    public Kilogram Weigth { get; init; } = weight.Value <= 20 ? weight : throw new ArgumentOutOfRangeException("The weight of the parcel must not be larger than 20");
+    public Kilogram Weigth { get; init; } = weight.Value <= 20 ? weight : throw new ArgumentOutOfRangeException($"The weight of the package must not be higher than 20.");
 }

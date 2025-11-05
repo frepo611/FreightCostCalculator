@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Unit.Ore.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Unit.Ore.cs" />
+  </ItemGroup>
+
 </Project>

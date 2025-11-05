@@ -2,7 +2,8 @@
 // Testar primary constructor
     internal class Box(Centimeter height, Centimeter width, Centimeter length, Kilogram weight)
 {
-    public Centimeter Heigth { get; init; } = height;
+
+    public Centimeter Height { get; init; } = height;
     public Centimeter Width { get; init; } = width;
     public Centimeter Length { get; init; } = length;
     
