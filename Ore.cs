@@ -1,7 +1,7 @@
 ﻿namespace FreightCostCalculator.App;
 
-public record Ore(int value)
+public struct Ore(int ore)
 {
-    public int Value { get; } = value >= 0 ? value : throw new ArgumentOutOfRangeException("The value of Öre must be larger than 0");
+    public int Value { get; } = ore >= 0 ? ore : throw new ArgumentOutOfRangeException("The value of Öre must be larger than 0");
    
 }

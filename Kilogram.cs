@@ -1,8 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace FreightCostCalculator.App;
 
-namespace FreightCostCalculator.App;
-
-public record Kilogram(int value)
+public readonly record struct Kilogram
 {
-    public int Value { get; } = value > 0 ? value : throw new ArgumentOutOfRangeException("Kilogram value must be larger than 0");
+    public int Kgs { get; }
+
+    public Kilogram(int kilograms)
+    {
+   Kgs = kilograms > 0 ? kilograms : throw new ArgumentOutOfRangeException("Argument must be larger than 0");       
+    }
+
 }

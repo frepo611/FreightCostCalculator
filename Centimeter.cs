@@ -1,20 +1,29 @@
 ﻿namespace FreightCostCalculator.App;
 
-public record Centimeter(int value) : IComparable
+public readonly record struct Centimeter : IComparable<Centimeter?>, IComparable
 
 {
-    public int Value { get; } = value > 0 ? value : throw new ArgumentOutOfRangeException("Centimeter value must be larger than 0");
+    public readonly int Cms { get; }
+    public Centimeter(int centimeters)
+    {
+       Cms = centimeters > 0 ? centimeters : throw new ArgumentOutOfRangeException($"{nameof(centimeters)}: The parameter must be larger than 0");
+ 
+    }
+        
+    
 
     public int CompareTo(Centimeter? other)
     {
         if (other is null) return 1;
-        return Value.CompareTo(other.Value);
+        return Cms.CompareTo(other.Value.Cms);
     }
 
     public int CompareTo(object? obj)
     {
-        if (obj is null) return 1; // Null is considered less than any instance
+        if (obj is null) return 1;
         if (obj is not Centimeter other) throw new ArgumentException("Object is not a Centimeter");
-        return value.CompareTo(other.value); // Compare the underlying values
+        return Cms.CompareTo(other.Cms); // Compare the underlying values
     }
-}
+
+   }
+
